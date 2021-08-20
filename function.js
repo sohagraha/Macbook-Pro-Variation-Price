@@ -1,5 +1,4 @@
 let totalPrice = grandTotal()
-console.log(totalPrice);
 
 // convert text to price 
 function textToPrice(price) {
@@ -37,10 +36,6 @@ function promoCal(price) {
     console.log(grandTotal);
 }
 
-
-
-
-
 // click on Promo and calculate the total if promo is valid 
 document.getElementById('promoBtnId').addEventListener('click', function () {
     promoCal(totalPrice);
@@ -57,21 +52,21 @@ document.getElementById('memoryOne').addEventListener('click', function () {
 })
 // click on second memory
 document.getElementById('memoryTwo').addEventListener('click', function () {
-    valueupdate('extraMemoryCost', 16)
+    valueupdate('extraMemoryCost', 180)
 })
 
 // click on storage
 document.getElementById('storageOne').addEventListener('click', function () {
-    valueupdate('extraStorageCost', 16)
+    valueupdate('extraStorageCost', 0)
 })
 document.getElementById('storageTwo').addEventListener('click', function () {
-    valueupdate('extraStorageCost', 32)
+    valueupdate('extraStorageCost', 100)
 })
 document.getElementById('storageThree').addEventListener('click', function () {
-    valueupdate('extraStorageCost', 64)
+    valueupdate('extraStorageCost', 180)
 })
 
-
+// click on delivery timeline
 document.getElementById('deliveryOne').addEventListener('click', function () {
     valueupdate('deliveryCharge', 0)
 })
