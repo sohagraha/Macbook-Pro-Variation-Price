@@ -1,3 +1,6 @@
+let totalPrice = grandTotal()
+console.log(totalPrice);
+
 // convert text to price 
 function textToPrice(price) {
     let priceText = document.getElementById(price).innerText;
@@ -20,27 +23,32 @@ function grandTotal() {
 // useing promo 
 function promoCal(price) {
     let total = 0;
+    let grandTotal = 0
     let couponTxt = document.getElementById('promoId').value;
+    price = textToPrice('totalPrice')
     if (couponTxt == 'stevekaku') {
         total = price * .2;
+        grandTotal = price - total;
     }
-
-    return (price - total);
+    else {
+        grandTotal = price;
+    }
+    document.getElementById('grandTotal').innerText = grandTotal;
+    console.log(grandTotal);
 }
 
 
 
-let totalPrice = grandTotal()
+
 
 // click on Promo and calculate the total if promo is valid 
 document.getElementById('promoBtnId').addEventListener('click', function () {
-    let grandTotal = promoCal(totalPrice);
-    document.getElementById('grandTotal').innerText = grandTotal;
+    promoCal(totalPrice);
 })
 
 function valueupdate(id, price) {
     document.getElementById(id).innerText = price;
-    grandTotal();
+    grandTotal()
 }
 
 // click on first memory 
