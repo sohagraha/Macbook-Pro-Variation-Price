@@ -33,7 +33,7 @@ function promoCal(price) {
         grandTotal = price;
     }
     document.getElementById('grandTotal').innerText = grandTotal;
-    console.log(grandTotal);
+    document.getElementById('promoId').value = '';
 }
 
 // click on Promo and calculate the total if promo is valid 
