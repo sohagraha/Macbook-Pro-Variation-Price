@@ -1,13 +1,13 @@
 let totalPrice = grandTotal()
 
-// convert text to price 
+// convert any text to price 
 function textToPrice(price) {
     let priceText = document.getElementById(price).innerText;
     let priceFloat = parseFloat(priceText);
     return priceFloat;
 }
 
-// total and grand total
+// Update Total And grand Total from price table 
 function grandTotal() {
     let basePrice = textToPrice('basePrice');
     let extraMemoryCost = textToPrice('extraMemoryCost');
@@ -19,7 +19,7 @@ function grandTotal() {
     return totalPrice;
 }
 
-// useing promo 
+// Using Promo Code and update the Grand Total
 function promoCal(price) {
     let total = 0;
     let grandTotal = 0
@@ -41,35 +41,39 @@ document.getElementById('promoBtnId').addEventListener('click', function () {
     promoCal(totalPrice);
 })
 
+// update the total everytime when select different specification 
 function valueupdate(id, price) {
     document.getElementById(id).innerText = price;
     grandTotal()
 }
 
-// click on first memory 
+// click on 8GB memory and add $0 on Extra Memory Cost
 document.getElementById('memoryOne').addEventListener('click', function () {
     valueupdate('extraMemoryCost', 0)
 })
-// click on second memory
+// click on 16GB memory and add $180 on Extra Memory Cost
 document.getElementById('memoryTwo').addEventListener('click', function () {
     valueupdate('extraMemoryCost', 180)
 })
 
-// click on storage
+// click on 256GB storage and add $0 on Extra storage Cost
 document.getElementById('storageOne').addEventListener('click', function () {
     valueupdate('extraStorageCost', 0)
 })
+// click on 512GB storage and add $100 on Extra storage Cost
 document.getElementById('storageTwo').addEventListener('click', function () {
     valueupdate('extraStorageCost', 100)
 })
+// click on 1TB storage and add $180 on Extra storage Cost
 document.getElementById('storageThree').addEventListener('click', function () {
     valueupdate('extraStorageCost', 180)
 })
 
-// click on delivery timeline
+// click on Prime Delivery timeline and add $0 on Delivery Charge
 document.getElementById('deliveryOne').addEventListener('click', function () {
     valueupdate('deliveryCharge', 0)
 })
+// click on Delivery $20 timeline and add $20 on Delivery Charge
 document.getElementById('deliveryTwo').addEventListener('click', function () {
     valueupdate('deliveryCharge', 20)
 })
